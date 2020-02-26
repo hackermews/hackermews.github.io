@@ -51,15 +51,15 @@ body {font-size:16px;}
   <!-- Photo grid (modal) -->
   <div class="w3-row-padding">
     <div class="w3-half">
-      <img src="/w3images/kitchenconcrete.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
-      <img src="/w3images/livingroom.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
-      <img src="/w3images/diningroom.jpg" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">
+      <img src="/w3images/kitchenconcrete.jpg" style="width:100%" onclick="onClickImg(this)" alt="Concrete meets bricks">
+      <img src="/w3images/livingroom.jpg" style="width:100%" onclick="onClickImg(this)" alt="Light, white and tight scandinavian design">
+      <img src="/w3images/diningroom.jpg" style="width:100%" onclick="onClickImg(this)" alt="White walls with designer chairs">
     </div>
 
     <div class="w3-half">
-      <img src="/w3images/atrium.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
-      <img src="/w3images/bedroom.jpg" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
-      <img src="/w3images/livingroom2.jpg" style="width:100%" onclick="onClick(this)" alt="Scandinavian design">
+      <img src="/w3images/atrium.jpg" style="width:100%" onclick="onClickImg(this)" alt="Windows for the atrium">
+      <img src="/w3images/bedroom.jpg" style="width:100%" onclick="onClickImg(this)" alt="Bedroom and office in one space">
+      <img src="/w3images/livingroom2.jpg" style="width:100%" onclick="onClickImg(this)" alt="Scandinavian design">
     </div>
   </div>
 
@@ -178,21 +178,17 @@ body {font-size:16px;}
   <div class="w3-container" id="contact" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new people!</p>
-    <form action="/action_page.php" target="_blank">
+    <h3>Send us an email</h3>
+    <form id="contactForm" action"#">
       <div class="w3-section">
-        <label>Name</label>
-        <input class="w3-input w3-border" type="text" name="Name" required>
-      </div>
-      <div class="w3-section">
-        <label>Email</label>
-        <input class="w3-input w3-border" type="text" name="Email" required>
+        <label>Subject</label>
+        <input class="w3-input w3-border" type="text" name="Subject" required>
       </div>
       <div class="w3-section">
         <label>Message</label>
         <input class="w3-input w3-border" type="text" name="Message" required>
       </div>
-      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
+      <button id="submitContactForm" type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
     </form>
   </div>
 
@@ -210,18 +206,33 @@ function w3_open() {
 }
 
 function w3_close() {
-  console.log("here");
   document.getElementById("mySidebar").style.display = "none";
   document.getElementById("myOverlay").style.display = "none";
 }
 
 // Modal Image Gallery
-function onClick(element) {
+function onClickImg(element) {
   document.getElementById("img01").src = element.src;
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
+
+// Submit contact form
+function submitContact(event) {
+  event.preventDefault();
+  var form = event.currentTarget;
+  var email = "brandon.m.henry+hackermews@gmail.com";
+  var subject = form.elements["Subject"].value;
+  var emailBody = form.elements["Message"].value;
+  window.open(
+    "mailto:"+email+"?subject="+subject+"&body="+emailBody,
+    "_blank"
+  );
+}
+
+var contactForm = document.getElementById("contactForm");
+contactForm.addEventListener('submit', submitContact);
 </script>
 
 </body>
