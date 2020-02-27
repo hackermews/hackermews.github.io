@@ -21,7 +21,39 @@ body {font-size:16px;}
     cursor: pointer;
 }
 
-#team img {
-    max-height: 300px;
-    width: 100%
+
+@media (max-width:600px){
+    #team img {
+
+    }
+}
+@media (min-width:601px){
+    #team img {
+        max-height: 150px;
+    }
+}
+@media (min-width:800px){
+    #team img {
+        max-height: 200px;
+    }
+}
+@media (min-width:993px){
+    #team img {
+        max-height: 150px;
+    }
+}
+@media (min-width:1205px){
+    #team img {
+        max-height: 200px;
+    }
+}
+@media (min-width:1400px){
+    #team img {
+        max-height: 250px;
+    }
+}
+@media (min-width:1600px){
+    #team img {
+        max-height: 300px;
+    }
 }
