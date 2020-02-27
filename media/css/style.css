@@ -16,8 +16,9 @@ body {font-size:16px;}
     margin-bottom: 215px;
 }
 
-.images-sq img {
+.images img {
     width: 100%;
+    cursor: pointer;
 }
 
 #team img {
