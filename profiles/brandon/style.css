@@ -1,0 +1,16 @@
+div.trim {
+    max-height:100px;
+    max-width: 50px;
+    overflow: hidden;
+}
+
+#work .w3-row {
+
+}
+
+#work img {
+    border:1px solid #021a40;
+    object-fit: cover;
+    width:200px;
+    height:200px;
+}
