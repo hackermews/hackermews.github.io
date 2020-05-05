@@ -1,0 +1,49 @@
+body {
+  background: rgb(8,0,143);
+  background: linear-gradient(90deg, rgb(32, 22, 215) 0%, rgb(49, 71, 211) 18%, rgba(0,212,255,1) 100%);
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#container {
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+#container h1 {
+  font-size: 4em;
+  font-weight: bolder;
+}
+
+#container h2 {
+  font-size: 3em;
+  font-weight: bolder;
+}
+
+#container h3 {
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+#container h4 {
+  font-size: 1em;
+  font-weight: bolder;
+}
+
+#carousel {
+  position: relative;
+}
+
+#carousel div {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin-left: -495px;
+}
+
+#carousel div img {
+  max-width: 990px;
+  max-height: 700px;
+}
