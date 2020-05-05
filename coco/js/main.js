@@ -19,7 +19,13 @@ function showImage(i) {
 }
 
 function swapImage() {
-  let i = getRandomInt(0, images.length);
+  let i;
+  while(true) {
+    i = getRandomInt(0, images.length);
+    if (i !== cur) {
+      break;
+    }
+  }
   hideImage(cur);
   cur = i;
   showImage(cur);
