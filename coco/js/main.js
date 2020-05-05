@@ -26,4 +26,4 @@ function swapImage() {
 }
 
 swapImage();
-setInterval(swapImage, 2000);
+setInterval(swapImage, 5000);
